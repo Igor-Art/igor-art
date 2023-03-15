@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('JetBrainsMono-Regular'), url('/src/fonts/JetBrainsMono-Regular.woff2') format('woff');
+}
+
+@keyframes cursor-blink {
+  from, to {
+    @apply text-transparent;
+  }
+  50% {
+    @apply text-primary text-opacity-70;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(108, 100, 89);
+  outline: 1px solid #282828;
+}
+
+::selection {
+  background: rgba(255,255,255, .2);
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  @apply text-primary bg-body;
+  line-height: normal;
+  font-family: JetBrainsMono, monospace;
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
+a {
+  @apply underline hover:text-active;
+}
+
+.section {
+  @apply mb-6;
+}
+.section-headline {
+  @apply flex mb-2 whitespace-nowrap;
+}
+.section-headline .command {
+  @apply ml-2 text-secondary overflow-x-hidden;
+}
+.section-headline .cursor {
+  @apply ml-1 select-none;
+  animation: cursor-blink 1.5s step-end infinite;
+}
+.section-headline .cursor.pause {
+  animation: none;
+}
+.section-content {
+  @apply max-w-screen-md overflow-y-hidden;
+  height: 0;
+  transition-property: height;
+  transition-timing-function: cubic-bezier(0.5,0,0.75, 0);
+}
+.section-content .loading-spinner {
+  @apply text-sky-300;
+  font-size: 1.05rem;
+}
+.section-content .loading-message {
+  @apply ml-1 text-secondary;
+}
+.section-content .telegram-icon {
+  @apply inline-block fill-primary;
+  margin-top: -2px;
+}
+
+.logo {
+}
+.logo-subtitle {
+  @apply text-xl md:text-3xl uppercase;
+}
+
+@media only screen and (max-width: 580px) {
+  .logo {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .logo {
+    font-size: 8px;
+  }
+  .logo-subtitle {
+    @apply text-base;
+  }
+}
