@@ -19,4 +19,4 @@ runSections(Array.from(sections))
 
 document
   .querySelectorAll('a[href="#telegram"]')
-  .forEach(link => link.setAttribute('href', atob('aHR0cHM6Ly90Lm1lL3dlYmxhYmlv')))
+  .forEach(link => link.setAttribute('href', atob('aHR0cHM6Ly90Lm1lL2lnb3JfYXJ0X3d3dw==')))
