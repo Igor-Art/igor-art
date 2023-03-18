@@ -89,6 +89,11 @@ a {
   @apply text-xl md:text-3xl uppercase;
 }
 
+.projects > li:before {
+  @apply inline mr-2;
+  content: '•';
+}
+
 @media only screen and (max-width: 580px) {
   .logo {
     font-size: 10px;
