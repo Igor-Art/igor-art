@@ -10,6 +10,7 @@ async function cmd(section) {
   const message = headline.getAttribute('data-command')
 
   input.textContent = ''
+  content.style.display = ''
   section.style.display = ''
 
   if (!message.length) {
